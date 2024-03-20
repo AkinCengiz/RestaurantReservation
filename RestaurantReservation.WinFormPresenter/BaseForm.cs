@@ -15,4 +15,10 @@ public partial class BaseForm : Form
         FrmCustomerOperation frm = new FrmCustomerOperation(new CustomerManager(new EfCustomerDal()));
         frm.Show();
     }
+
+    private void btnMenuOperation_Click(object sender, EventArgs e)
+    {
+        FrmMenuOperation frm = new FrmMenuOperation(new MenuManager(new EfMenuDal()));
+        frm.Show();
+    }
 }

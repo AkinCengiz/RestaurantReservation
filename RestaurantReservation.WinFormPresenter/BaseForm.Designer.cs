@@ -29,6 +29,7 @@ partial class BaseForm
     private void InitializeComponent()
     {
         btnCustomer = new Button();
+        btnMenuOperation = new Button();
         SuspendLayout();
         // 
         // btnCustomer
@@ -44,12 +45,26 @@ partial class BaseForm
         btnCustomer.UseVisualStyleBackColor = false;
         btnCustomer.Click += btnCustomer_Click;
         // 
+        // btnMenuOperation
+        // 
+        btnMenuOperation.BackColor = Color.Green;
+        btnMenuOperation.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+        btnMenuOperation.ForeColor = Color.White;
+        btnMenuOperation.Location = new Point(168, 12);
+        btnMenuOperation.Name = "btnMenuOperation";
+        btnMenuOperation.Size = new Size(137, 115);
+        btnMenuOperation.TabIndex = 1;
+        btnMenuOperation.Text = "Menu Operation";
+        btnMenuOperation.UseVisualStyleBackColor = false;
+        btnMenuOperation.Click += btnMenuOperation_Click;
+        // 
         // BaseForm
         // 
         AutoScaleDimensions = new SizeF(11F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.DarkGreen;
         ClientSize = new Size(1228, 808);
+        Controls.Add(btnMenuOperation);
         Controls.Add(btnCustomer);
         Font = new Font("Segoe UI", 14F);
         Margin = new Padding(5);
@@ -61,4 +76,5 @@ partial class BaseForm
     #endregion
 
     private Button btnCustomer;
+    private Button btnMenuOperation;
 }
