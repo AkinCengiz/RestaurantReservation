@@ -1,4 +1,4 @@
-# **RestaurantReservation**
+# RestaurantReservation
 ---
 * N Tier Architecture
 * Repository Pattern
