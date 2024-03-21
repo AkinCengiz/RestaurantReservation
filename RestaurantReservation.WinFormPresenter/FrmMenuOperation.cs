@@ -128,6 +128,7 @@ public partial class FrmMenuOperation : Form
         {
             menu.IsDeleted = false;
         }
+        _menuService.Update(menu);
 
         LoadControls();
         ClearControl();

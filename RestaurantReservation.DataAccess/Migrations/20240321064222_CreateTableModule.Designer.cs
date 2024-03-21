@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestaurantReservation.DataAccess.Concrete.EntityFramework.Contexts;
 
@@ -11,9 +12,11 @@ using RestaurantReservation.DataAccess.Concrete.EntityFramework.Contexts;
 namespace RestaurantReservation.DataAccess.Migrations
 {
     [DbContext(typeof(RestaurantReservationContext))]
-    partial class RestaurantReservationContextModelSnapshot : ModelSnapshot
+    [Migration("20240321064222_CreateTableModule")]
+    partial class CreateTableModule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,44 +100,6 @@ namespace RestaurantReservation.DataAccess.Migrations
                     b.ToTable("Menus");
                 });
 
-            modelBuilder.Entity("RestaurantReservation.Entities.Concrete.Reservation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateInfo")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("TableId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("TimeInfo")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("TableId");
-
-                    b.ToTable("Reservations");
-                });
-
             modelBuilder.Entity("RestaurantReservation.Entities.Concrete.Table", b =>
                 {
                     b.Property<int>("Id")
@@ -162,25 +127,6 @@ namespace RestaurantReservation.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tables");
-                });
-
-            modelBuilder.Entity("RestaurantReservation.Entities.Concrete.Reservation", b =>
-                {
-                    b.HasOne("RestaurantReservation.Entities.Concrete.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RestaurantReservation.Entities.Concrete.Table", "Table")
-                        .WithMany()
-                        .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Table");
                 });
 #pragma warning restore 612, 618
         }
