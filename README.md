@@ -3,4 +3,4 @@
 * N Tier Architecture
 * Repository Pattern
 * Windows Form App
-* Entity Framework
+* Entity Framework Code First
