@@ -44,6 +44,8 @@ public partial class FrmTableOperations : Form
             CreatedDate = DateTime.Now
         };
         _tableService.Add(table);
+        LoadControls();
+        ClearControls();
     }
 
     private void btnUpdate_Click(object sender, EventArgs e)
@@ -72,12 +74,31 @@ public partial class FrmTableOperations : Form
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-
+        if (txtId.Text != "")
+        {
+            Table table = _tableService.Get(Convert.ToInt32(txtId.Text));
+            table.IsDeleted = true;
+            _tableService.Update(table);
+        }
+        
     }
 
     private void btnGetList_Click(object sender, EventArgs e)
     {
-
+        List<Table> tables = new List<Table>();
+        if (rdbAll.Checked)
+        {
+            tables = _tableService.GetAll();
+        }else if (rdbIsActive.Checked)
+        {
+            tables = _tableService.GetListByIsActive();
+        }
+        else
+        {
+            tables = _tableService.GetListByInactive();
+        }
+        dgvTable.DataSource = tables;
+        ClearControls();
     }
 
     private void btnGet_Click(object sender, EventArgs e)

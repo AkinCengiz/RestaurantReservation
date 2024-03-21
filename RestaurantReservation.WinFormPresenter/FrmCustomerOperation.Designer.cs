@@ -128,6 +128,7 @@ partial class FrmCustomerOperation
         gbxCustomerOperations.TabIndex = 1;
         gbxCustomerOperations.TabStop = false;
         gbxCustomerOperations.Text = "Customer CRUD";
+        gbxCustomerOperations.Enter += gbxCustomerOperations_Enter;
         // 
         // cbxIsDeleted
         // 

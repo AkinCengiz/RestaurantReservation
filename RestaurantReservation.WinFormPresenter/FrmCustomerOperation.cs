@@ -30,7 +30,7 @@ public partial class FrmCustomerOperation : Form
 
     void LoadControls()
     {
-       
+
         if (rdbAll.Checked)
         {
             dgvCustomer.DataSource = _customerService.GetListUnConditional();
@@ -150,5 +150,8 @@ public partial class FrmCustomerOperation : Form
         cbxIsDeleted.Visible = true;
     }
 
-    
+    private void gbxCustomerOperations_Enter(object sender, EventArgs e)
+    {
+
+    }
 }

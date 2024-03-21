@@ -8,4 +8,6 @@ using RestaurantReservation.Entities.Concrete;
 namespace RestaurantReservation.Business.Abstract;
 public interface ITableService : IGenericService<Table>
 {
+    List<Table> GetListByIsActive();
+    List<Table> GetListByInactive();
 }

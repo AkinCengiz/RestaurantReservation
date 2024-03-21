@@ -46,4 +46,14 @@ public class TableManager : ITableService
     {
         return _tableDal.Get(t => t.Id == id);
     }
+
+    public List<Table> GetListByIsActive()
+    {
+        return _tableDal.GetList(t => t.IsActive == true);
+    }
+
+    public List<Table> GetListByInactive()
+    {
+        return _tableDal.GetList(t => t.IsActive == false);
+    }
 }

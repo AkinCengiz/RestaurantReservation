@@ -11,7 +11,7 @@ public class RestaurantReservationContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Data Source=ACENGIZ\AKINCENGIZ; initial catalog=RestaurantReservationDb;Integrated Security=True;Trust Server Certificate=True;");
+        optionsBuilder.UseSqlServer(@"Data Source=AKINCENGIZ;initial catalog=RestaurantReservationDb;Integrated Security=True;Trust Server Certificate=True;");
     }
 
     public DbSet<Customer> Customers { get; set; }

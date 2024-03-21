@@ -30,7 +30,7 @@ public partial class BaseForm : Form
 
     private void btnReservationOperations_Click(object sender, EventArgs e)
     {
-        FrmReservationOperations frm = new FrmReservationOperations();
+        FrmReservationOperations frm = new FrmReservationOperations(new ReservationManager(new EfReservationDal()));
         frm.Show();
     }
 
