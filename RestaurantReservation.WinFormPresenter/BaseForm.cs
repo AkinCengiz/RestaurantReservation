@@ -21,4 +21,22 @@ public partial class BaseForm : Form
         FrmMenuOperation frm = new FrmMenuOperation(new MenuManager(new EfMenuDal()));
         frm.Show();
     }
+
+    private void btnOrderOperations_Click(object sender, EventArgs e)
+    {
+        FrmOrderOperations frm = new FrmOrderOperations();
+        frm.Show();
+    }
+
+    private void btnReservationOperations_Click(object sender, EventArgs e)
+    {
+        FrmReservationOperations frm = new FrmReservationOperations();
+        frm.Show();
+    }
+
+    private void btnTableOperations_Click(object sender, EventArgs e)
+    {
+        FrmTableOperations frm = new FrmTableOperations(new TableManager(new EfTableDal()));
+        frm.Show();
+    }
 }

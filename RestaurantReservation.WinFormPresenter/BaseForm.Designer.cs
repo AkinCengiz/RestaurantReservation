@@ -30,6 +30,9 @@ partial class BaseForm
     {
         btnCustomer = new Button();
         btnMenuOperation = new Button();
+        btnOrderOperations = new Button();
+        btnReservationOperations = new Button();
+        btnTableOperations = new Button();
         SuspendLayout();
         // 
         // btnCustomer
@@ -58,12 +61,54 @@ partial class BaseForm
         btnMenuOperation.UseVisualStyleBackColor = false;
         btnMenuOperation.Click += btnMenuOperation_Click;
         // 
+        // btnOrderOperations
+        // 
+        btnOrderOperations.BackColor = Color.Green;
+        btnOrderOperations.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+        btnOrderOperations.ForeColor = Color.White;
+        btnOrderOperations.Location = new Point(323, 12);
+        btnOrderOperations.Name = "btnOrderOperations";
+        btnOrderOperations.Size = new Size(137, 115);
+        btnOrderOperations.TabIndex = 2;
+        btnOrderOperations.Text = "Order Operation";
+        btnOrderOperations.UseVisualStyleBackColor = false;
+        btnOrderOperations.Click += btnOrderOperations_Click;
+        // 
+        // btnReservationOperations
+        // 
+        btnReservationOperations.BackColor = Color.Green;
+        btnReservationOperations.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+        btnReservationOperations.ForeColor = Color.White;
+        btnReservationOperations.Location = new Point(475, 12);
+        btnReservationOperations.Name = "btnReservationOperations";
+        btnReservationOperations.Size = new Size(137, 115);
+        btnReservationOperations.TabIndex = 3;
+        btnReservationOperations.Text = "Reservation Operation";
+        btnReservationOperations.UseVisualStyleBackColor = false;
+        btnReservationOperations.Click += btnReservationOperations_Click;
+        // 
+        // btnTableOperations
+        // 
+        btnTableOperations.BackColor = Color.Green;
+        btnTableOperations.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+        btnTableOperations.ForeColor = Color.White;
+        btnTableOperations.Location = new Point(628, 12);
+        btnTableOperations.Name = "btnTableOperations";
+        btnTableOperations.Size = new Size(137, 115);
+        btnTableOperations.TabIndex = 4;
+        btnTableOperations.Text = "Table Operation";
+        btnTableOperations.UseVisualStyleBackColor = false;
+        btnTableOperations.Click += btnTableOperations_Click;
+        // 
         // BaseForm
         // 
         AutoScaleDimensions = new SizeF(11F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.DarkGreen;
         ClientSize = new Size(1228, 808);
+        Controls.Add(btnTableOperations);
+        Controls.Add(btnReservationOperations);
+        Controls.Add(btnOrderOperations);
         Controls.Add(btnMenuOperation);
         Controls.Add(btnCustomer);
         Font = new Font("Segoe UI", 14F);
@@ -77,4 +122,7 @@ partial class BaseForm
 
     private Button btnCustomer;
     private Button btnMenuOperation;
+    private Button btnOrderOperations;
+    private Button btnReservationOperations;
+    private Button btnTableOperations;
 }
