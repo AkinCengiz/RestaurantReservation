@@ -1,6 +1,6 @@
 # RestaurantReservation
 ---
 * N Tier Architecture
-* Repository Pattern
+* Repository Desing Pattern
 * Windows Form App
 * Entity Framework Code First
